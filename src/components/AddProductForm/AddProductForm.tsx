@@ -7,7 +7,6 @@ const AddProductForm = () => {
     const [name, setName] = useState('')
     const [price, setPrice] = useState('');
 
-
     const handleClick = (e:FormEvent) => {
         e.preventDefault();
         dispatch(createProductAction({name, price: parseInt(price) }));

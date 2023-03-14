@@ -1,8 +1,7 @@
 import { increment, decrement, incrementRandom } from './../actions/counterActions';
 import { createReducer } from '@reduxjs/toolkit';
 
-
-const initialState = { counter: 0, }
+const initialState = { counter: 0 }
 
 export const counterReducer = createReducer(initialState, (builder) => {
     builder

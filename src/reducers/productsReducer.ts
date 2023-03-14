@@ -9,5 +9,5 @@ export const productsReducer = createReducer(initialState, (builder) => {
     builder
     .addCase(createProductAction, (state, action) => {
         state.list.push({...action.payload, id: state.list.length+1})
-    })
+    });
 });

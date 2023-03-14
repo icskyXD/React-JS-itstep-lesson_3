@@ -1,17 +1,25 @@
-import { Counter, ProductList, AddProductForm } from './components/index';
+import { useSelector } from 'react-redux';
+import { Counter, ProductList, AddProductForm, UsersList, Spinner, PostsList } from './components/index';
+import { RootState } from './store';
 
 const App = () => {
+
+  const loader = useSelector<RootState, boolean>((state) => state.loader.loading)
+
   return (
     <div>
       <h1>Redux</h1>
-      <ProductList/>
-      <AddProductForm/>
+      <AddProductForm />s
+      <ProductList />
+      <UsersList />
+      {loader && <Spinner />}
+      <PostsList/>
+      {/* <Counter/> */}
     </div>
   )
 };
 
 export default App;
-
 
 // const initialState = {
 //   counter: 0,
@@ -45,4 +53,3 @@ export default App;
 // const rnd = Math.random()*10
 // store = reducer(store, {type:'RND', payload: rnd})
 // console.log({store});
-
